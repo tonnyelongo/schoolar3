@@ -3,7 +3,7 @@ const https = require('http')
 var cors = require('cors')
 const session=require("express-session")
 const app = express()
-const mysql=require("mysql");
+//const mysql=require("mysql");
 const bodyParser = require('body-parser')
 const path = require("path")
 var xss = require("xss")
@@ -38,12 +38,12 @@ var io = require('socket.io')(server)
 app.use(cors())
 app.use(bodyParser.json())
 
-var connection = mysql.createConnection({
+/*var connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
 	password : '',
 	database : 'almadb'
-});
+});*/
 
 /*app.post("/login",(req,res)=>{
 
@@ -99,7 +99,7 @@ var connection = mysql.createConnection({
 	
 });*/
 
-app.get("/estudantes",(req,res)=>{
+/*app.get("/estudantes",(req,res)=>{
 	connection.query("SELECT * FROM `ESTUDANTE` ",function(err,rows,fields){
 		if(err)
 		{
@@ -124,7 +124,7 @@ app.post("/login",(req,res)=>{
 	console.log("dados: "+nome+" senha: "+senha);
 	 
 });
-
+*/
 
 app.get("/ola",(req,res)=>{
    res.json({message:"helloworld"})
